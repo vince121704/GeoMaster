@@ -1,0 +1,188 @@
+<html>
+<head>
+  <title>Geomaster! Discover the World one Question at a Time!</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: peachpuff;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    p {
+      color: black;
+      font-weight: bold;
+      font-size: 30px;
+      font-family:'Joystix Monospace';
+    }
+    a{
+      font-size: 20px;
+      color: green;
+      font-family: 'joystix monospace';
+    }
+    button{
+      font-size: 20px;
+      color: green;
+      font-family: 'joystix monospace';
+    }
+    input{
+            font-size: 20px;
+            color: green;
+            font-family: 'joystix monospace';
+        }
+
+    .button {
+            background: #51b86b;
+            font-size: 20px;
+            color: white;
+            border-radius: 7px;
+            box-shadow: 0 7px 0px #389661;
+            display: inline-block;
+            transition: all .2s;
+            position: relative;
+            padding: 20px 25px;
+            position: relative;
+            top: 0;
+            cursor: pointer;
+            margin:0 20px;
+            font-style: 'joystix monospace';
+            }
+        .button:active {
+            top: 3px;
+            box-shadow: 0 2px 0px #389661;
+            transition: all .2s;
+            }
+
+.header__title {
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  font-family: 'joystix monospace';
+}
+
+.diff-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 560px;
+    font-family: 'joystix monospace';
+    margin: 0 auto;
+  }
+
+.diffname, 
+.description{
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #389661;
+  font-family: 'joystix monospace';
+  align-items: center;
+}
+
+.diffname {
+  font-size: 30px;
+  font-family: 'joystix monospace';
+  align-items: center;
+}
+
+.diffclass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  margin: 5px;
+  padding: 20px 0;
+  border-radius: 5px;
+  border: solid 3px #FFF;
+  background: white;
+  box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.4);
+  transition: transform .5s;
+  align-items: center;
+  cursor: pointer;
+  &:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 10px;
+    border: solid 3px #CDD1D5;
+    transform: translateY(-30%);
+    font-family: 'joystix monospace';
+  }
+  
+}
+
+input[type="radio"] {
+  display: none;
+  &:checked + label:before {
+    background: #389661;
+    font-size: 50px;
+    font-family: 'joystix monospace';
+    align-items: center;
+  }
+  &:checked + label {
+    border: solid 3px #389661;
+    background: #FFF;
+    transform: translateY(-10%);
+    transition: transform .5s;
+    .subscription__title,
+    .subscription__main-feature,
+    .subscription__price {
+      color: #389661;
+      font-family: 'joystix monospace';
+      align-items: center;
+    }
+  }
+}
+  </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <form method="POST" action="/guest_index">
+        <div class="header">
+          <h2 class="header__title">Choose your difficulty!</h2>
+        </div>
+        <div class="diff-container">
+          <input type="radio" name="difficulty" id="option1" value="Easy">
+          <label for="option1" class="diffclass">
+            <span class="diffname">Easy</span>
+            <span class="description">Start your journey</span>
+          </label>
+
+          <input type="radio" name="difficulty" id="option2" value="Medium">
+          <label for="option2" class="diffclass">
+            <span class="diffname">Medium</span>
+            <span class="description">Challenge your skills</span>
+          </label>
+              
+          <input type="radio" name="difficulty" id="option3" value="Hard">
+          <label for="option3" class="diffclass">
+            <span class="diffname">Hard</span>
+            <span class="description">Push your limits</span>
+          </label>
+        </div>
+        <br>
+        <input type="submit" value="Start Quiz!" class="button"style="border:none;">
+      </form>
+    <br>
+    <a href="/homepage" class="button" style="text-decoration: none;">Back to Menu</a>
+</body>
+</html>

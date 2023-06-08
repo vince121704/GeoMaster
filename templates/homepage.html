@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoMaster Home</title>
+    <style>
+        body {
+            background-image: url(https://cdn.discordapp.com/attachments/885444102878003250/1116302199367139339/th.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: auto;
+            height: 100%;
+        }
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Joystix monospace';
+            color: green;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Joystix monospace';
+            color: green;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Joystix monospace';
+            color: rgba(116, 94, 47, 0.966);
+        }
+        .play-button, .about-button, .how-button {
+            display: block;
+            width: 300px;
+            height: 60px;
+            margin:  auto;
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 59px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            font-family: 'Joystix monospace';
+        }
+        .play-button:hover, .about-button:hover, .how-button:hover {
+            background-color: transparent;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if logged_in %}
+        <a href="/start" class="play-button">Play</a>
+        <br>
+        <br>
+        <a href="/logout" class="how-button">Log Out</a>
+    {% else %}
+        <a href="/login" class="play-button">Log In</a>
+        <br>
+        <br>
+        <a href="/guest_start" class="play-button">Play as Guest</a>
+    {% endif %}
+    <br>
+    <br>
+    <a href="/about" class="about-button">About</a>
+    <br>
+    <br>
+    <a href="/howto" class="how-button">How to Play</a>
+</body>
+
+</html>

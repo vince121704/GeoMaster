@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question</title>
+    <style>
+        body {
+            font-family: 'Joystix Monospace';
+            background-image: url(https://media.discordapp.net/attachments/883058098711969792/1110911824225906799/image.png?width=1201&height=675);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4caf50;
+            text-shadow: 2px 2px #000000;
+        }
+
+        form {
+            background-color: #f6c492;
+            padding: 50px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .question {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .choices {
+            margin-left: 1px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .choice-label {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            color: #333333;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Joystix Monospace';
+            transition: all 0.3s ease;
+        }
+
+        .choice-label:hover {
+            background-color: #e0e0e0;
+        }
+
+        input[type="radio"]:checked + .choice-label {
+            background-color: #4caf50;
+            color: #fff;
+            border-color: #4caf50;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 50px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Joystix Monospace';
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        #timer {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4caf50;
+            text-shadow: 2px 2px #000000;
+        }
+    </style>
+    <script>
+        var timeLimit = 20;
+
+        function startTimer() {
+            var timerElement = document.getElementById("timer");
+            var timer = setInterval(function() {
+                if (timeLimit <= 0) {
+                    clearInterval(timer);
+                    document.forms[0].submit();
+                } else {
+                    timerElement.innerHTML = "Time Remaining: " + timeLimit + " seconds";
+                    timeLimit--;
+                }
+            }, 1000);
+        }
+
+        window.onload = startTimer;
+    </script>
+</head>
+<body>
+    <h1>Welcome to Geomaster!</h1>
+    <div id="timer">Time Remaining: 20 seconds</div>
+    <form action="/submit" method="POST">
+        {% for question in questions %}
+            <div class="question">
+                {{ question.question }}
+            </div>
+            <div class="choices">
+                {% for choice in question.choices %}
+                    <input type="radio" id="{{ choice }}" name="{{ question.question }}" value="{{ choice }}">
+                    <label class="choice-label" for="{{ choice }}">{{ choice }}</label>
+                {% endfor %}
+            </div>
+            <br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
