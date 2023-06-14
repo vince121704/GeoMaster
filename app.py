@@ -889,7 +889,6 @@ def index():
     leaderboard_scores = get_leaderboard_scores()
     return render_template('homepage.html', username=session.get('username'), scores=leaderboard_scores)
 
-
 @app.route('/guest_index', methods=['GET', 'POST'])
 def guest_index():
     if request.method == 'POST':
@@ -916,7 +915,6 @@ def submit():
         update_leaderboard(username, score, difficulty)
 
     return render_template('result.html', score=score)
-
 
 @app.route('/guest_submit', methods=['POST'])
 def guest_submit():
