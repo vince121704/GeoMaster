@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>GeoMaster Home</title>
+    <link rel="icon"  type="image" href="https://media.discordapp.net/attachments/883058098711969792/1118459943171919932/Untitled_design-removebg-preview.png">
     <style>
         body {
             background-image: url(https://cdn.discordapp.com/attachments/885444102878003250/1116302199367139339/th.gif);
@@ -29,24 +30,73 @@
             font-family: 'Joystix monospace';
             color: rgba(116, 94, 47, 0.966);
         }
-        .play-button, .about-button, .how-button {
-            display: block;
-            width: 300px;
-            height: 60px;
-            margin:  auto;
-            background-color: green;
-            color: white;
+
+        .game-button {
+            position: relative;
+            top: 0;
+            cursor: pointer;
+            text-decoration: none !important;
+            outline: none !important;
+            font-family: joystix monospace;
             font-size: 20px;
-            text-align: center;
-            line-height: 59px;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            font-family: 'Joystix monospace';
+            line-height: 1.5em;
+            letter-spacing: .1em;
+            text-shadow: 2px 2px 1px #0066a2, -2px 2px 1px #0066a2, 2px -2px 1px #0066a2, -2px -2px 1px #0066a2, 0px 2px 1px #0066a2, 0px -2px 1px #0066a2, 0px 4px 1px #004a87, 2px 4px 1px #004a87, -2px 4px 1px  #004a87;
+            border: none;
+            margin: 15px 15px 30px;
+            background: repeating-linear-gradient( 45deg, #3ebbf7, #3ebbf7 5px, #45b1f4 5px, #45b1f4 10px);
+            border-bottom: 3px solid rgba(16, 91, 146, 0.5);
+            border-top: 3px solid rgba(255,255,255,.3);
+            color: #fff !important;
+            border-radius: 8px;
+            padding: 8px 40px 10px;
+            box-shadow: 0 6px 0 #266b91, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #12517d, 0 12px 0 5px #1a6b9a, 0 15px 0 5px #0c405e, 0 15px 1px 6px rgba(0,0,0,.3);
+            width: 250px;
         }
-        .play-button:hover, .about-button:hover, .how-button:hover {
-            background-color: transparent;
-            color: darkgreen;
+        .game-button:hover {
+            top:2px;
+            box-shadow: 0 4px 0 #266b91, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #12517d, 0 10px 0 5px #1a6b9a, 0 13px 0 5px #0c405e, 0 13px 1px 6px rgba(0,0,0,.3);
+        }
+        .game-button::before {
+            content: '';
+            height: 10%;
+            position: absolute;
+            width: 40%;
+            background: #fff;
+            right: 13%;
+            top: -3%;
+            border-radius: 99px;
+        }
+        .game-button::after {
+            content: '';
+            height: 10%;
+            position: absolute;
+            width: 5%;
+            background: #fff;
+            right: 5%;
+            top: -3%;
+            border-radius: 99px;
+        }
+        .game-button.green {
+            background: repeating-linear-gradient( 45deg, #54d440, #54d440 5px, #52cc3f 5px, #52cc3f 10px);
+            box-shadow: 0 6px 0 #348628, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #2a6d20, 0 12px 0 5px #39822e, 0 15px 0 5px #1d4c16, 0 15px 1px 6px rgba(0,0,0,.3);
+            border-bottom: 3px solid rgba(40, 117, 29, 0.5);
+            text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
+            height: 30px;
+        }
+        .game-button.green:hover {
+            top:2px;
+            box-shadow: 0 4px 0 #348628, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #2a6d20, 0 10px 0 5px #39822e, 0 13px 0 5px #1d4c16, 0 13px 1px 6px rgba(0,0,0,.3);
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2px;
+        }
+        .button-container .game-button {
+            margin: 20px;
         }
     </style>
 </head>
@@ -62,25 +112,28 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
     {% if logged_in %}
-        <a href="/start" class="play-button">Play</a>
-        <br>
-        <br>
-        <a href="/logout" class="how-button">Log Out</a>
+    <center>
+        <div class="button-container">
+            <a href="/start" class="game-button green">Play</a>
+        </div>
+    </center>
     {% else %}
-        <a href="/login" class="play-button">Log In</a>
-        <br>
-        <br>
-        <a href="/guest_start" class="play-button">Play as Guest</a>
+    <center>
+        <div class="button-container">
+            <a href="/login" class="game-button green">Log In</a>
+            <a href="/guest_start" class="game-button green">Play as Guest</a>
+        </div>
+    </center>
     {% endif %}
-    <br>
-    <br>
-    <a href="/about" class="about-button">About</a>
-    <br>
-    <br>
-    <a href="/howto" class="how-button">How to Play</a>
+    <center>
+        <div class="button-container">
+            <a href="/about" class="game-button green">About</a>
+            <a href="/howto" class="game-button green">How to Play</a>
+            {% if logged_in %}
+            <a href="/logout" class="game-button green">Log Out</a>
+            {% endif %}
+        </div>
+    </center>
 </body>
-
 </html>

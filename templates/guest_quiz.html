@@ -2,14 +2,16 @@
 <html>
 <head>
     <title>Question</title>
+    <link rel="icon"  type="image" href="https://media.discordapp.net/attachments/883058098711969792/1118459943171919932/Untitled_design-removebg-preview.png">
     <style>
-        body {
+               body {
             font-family: 'Joystix Monospace';
-            background-image: url(https://media.discordapp.net/attachments/883058098711969792/1110911824225906799/image.png?width=1201&height=675);
+            background-image: url(https://cdn.discordapp.com/attachments/885444102878003250/1117819245267529768/th.png);
             background-repeat: no-repeat;
             background-size: cover;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            height: 100vh;
         }
 
         h1 {
@@ -93,6 +95,7 @@
             text-shadow: 2px 2px #000000;
         }
     </style>
+
     <script>
         var timeLimit = 20;
 
@@ -110,25 +113,36 @@
         }
 
         window.onload = startTimer;
+
+        function handleRadioClick() {
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                if (radio.checked) {
+                    radio.nextElementSibling.classList.add("selected");
+                } else {
+                    radio.nextElementSibling.classList.remove("selected");
+                }
+            });
+        }
     </script>
 </head>
 <body>
     <h1>Welcome to Geomaster!</h1>
     <div id="timer">Time Remaining: 20 seconds</div>
-    <form action="/submit" method="POST">
+    <form action="/guest_submit" method="POST">
         {% for question in questions %}
-            <div class="question">
-                {{ question.question }}
-            </div>
-            <div class="choices">
-                {% for choice in question.choices %}
-                    <input type="radio" id="{{ choice }}" name="{{ question.question }}" value="{{ choice }}">
-                    <label class="choice-label" for="{{ choice }}">{{ choice }}</label>
-                {% endfor %}
-            </div>
-            <br>
+        <div class="question">
+            {{ question.question }}
+        </div>
+        <div class="choices">
+            {% for choice in question.choices %}
+            <input type="radio" id="{{ choice }}" name="{{ question.question }}" value="{{ choice }}" onclick="handleRadioClick()">
+            <label class="choice-label" for="{{ choice }}">{{ choice }}</label>
+            {% endfor %}
+        </div>
+        <br>
         {% endfor %}
-        <input type="submit" value="Submit">
+        <center><input type="submit" value="Submit">
     </form>
 </body>
 </html>

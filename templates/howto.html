@@ -1,76 +1,134 @@
-<html>
+    <!DOCTYPE html>
+    <html>
     <head>
         <title>How to Play</title>
+        <link rel="icon"  type="image" href="https://media.discordapp.net/attachments/883058098711969792/1118459943171919932/Untitled_design-removebg-preview.png">
         <style>
-
-            body{
+            body {
                 background-image: url(https://cdn.discordapp.com/attachments/1108781673560150058/1116287280693399622/th.gif);
                 background-repeat: no-repeat;
                 background-size: cover;
+                font-family: 'Joystix monospace', cursive;
             }
 
-        h1{font-size: 30px;
-            color: black;
-            font-family: 'Joystix monospace';
-            text-align: center;
-        }
-        p{
-            font-size: 15px;
-            color: green;
-            font-family: 'joystix monospace';
-            text-align: center;
-        }
-        a{
-            font-size: 20px;
-            color: green;
-            font-family: 'joystix monospace';
-        }
-        .button {
-            background: #51b86b;
-            font-size: 20px;
-            color: white;
-            border-radius: 7px;
-            box-shadow: 0 7px 0px #389661;
-            display: inline-block;
-            transition: all .2s;
-            position: relative;
-            padding: 20px 25px;
+            h1 {
+                font-size: 48px;
+                color: #333;
+                text-align: center;
+                margin-top: 40px;
+                animation: fade-in 1s ease-in-out;
+            }
+
+            p {
+                font-size: 20px;
+                color: #51b86b;
+                text-align: center;
+                animation: slide-up 1s ease-in-out;
+            }
+
+            .game-button {
             position: relative;
             top: 0;
             cursor: pointer;
-            margin:0 20px;
-            }
-        .button:active {
-            top: 3px;
-            box-shadow: 0 2px 0px #389661;
-            transition: all .2s;
-            }
-            #container {
-            background-color: peachpuff;
-            margin: 80px 10%;
-            padding: 10px 10px;
-            border-radius: 20px;
-            box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+            text-decoration: none !important;
+            outline: none !important;
+            font-family: joystix monospace;
+            font-size: 20px;
+            line-height: 1.5em;
+            letter-spacing: .1em;
+            text-shadow: 2px 2px 1px #0066a2, -2px 2px 1px #0066a2, 2px -2px 1px #0066a2, -2px -2px 1px #0066a2, 0px 2px 1px #0066a2, 0px -2px 1px #0066a2, 0px 4px 1px #004a87, 2px 4px 1px #004a87, -2px 4px 1px  #004a87;
+            border: none;
+            margin: 15px 15px 30px;
+            background: repeating-linear-gradient( 45deg, #3ebbf7, #3ebbf7 5px, #45b1f4 5px, #45b1f4 10px);
+            border-bottom: 3px solid rgba(16, 91, 146, 0.5);
+            border-top: 3px solid rgba(255,255,255,.3);
+            color: #fff !important;
+            border-radius: 8px;
+            padding: 8px 40px 10px;
+            box-shadow: 0 6px 0 #266b91, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #12517d, 0 12px 0 5px #1a6b9a, 0 15px 0 5px #0c405e, 0 15px 1px 6px rgba(0,0,0,.3);
+            width: 250px;
         }
-        main,header {
-            box-sizing: border-box;
+        .game-button:hover {
+            top:2px;
+            box-shadow: 0 4px 0 #266b91, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #12517d, 0 10px 0 5px #1a6b9a, 0 13px 0 5px #0c405e, 0 13px 1px 6px rgba(0,0,0,.3);
+        }
+        .game-button::before {
+            content: '';
+            height: 10%;
+            position: absolute;
+            width: 40%;
+            background: #fff;
+            right: 13%;
+            top: -3%;
+            border-radius: 99px;
+        }
+        .game-button::after {
+            content: '';
+            height: 10%;
+            position: absolute;
+            width: 5%;
+            background: #fff;
+            right: 5%;
+            top: -3%;
+            border-radius: 99px;
+        }
+        .game-button.green {
+            background: repeating-linear-gradient( 45deg, #54d440, #54d440 5px, #52cc3f 5px, #52cc3f 10px);
+            box-shadow: 0 6px 0 #348628, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #2a6d20, 0 12px 0 5px #39822e, 0 15px 0 5px #1d4c16, 0 15px 1px 6px rgba(0,0,0,.3);
+            border-bottom: 3px solid rgba(40, 117, 29, 0.5);
+            text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
+            height: 30px;
+            animation: scale-in 1s ease-in-out;
+        }
+        .game-button.green:hover {
+            top:2px;
+            box-shadow: 0 4px 0 #348628, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #2a6d20, 0 10px 0 5px #39822e, 0 13px 0 5px #1d4c16, 0 13px 1px 6px rgba(0,0,0,.3);
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2px;
+        }
+        .button-container .game-button {
+            margin: 20px;
         }
 
-        main {
-            background-color: #f7f7f7;
-            padding: 10px;
-            border-radius: 10px;
-            color: #6b6b6b;
-            margin: 40px 0;
-        }
-</style>
-<body>
-    <div id="container">
-        <header>
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @keyframes slide-up {
+                from { transform: translateY(50px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+
+            @keyframes scale-in {
+                from { transform: scale(0); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+            }
+
+            #container {
+                background-color: peachpuff;
+                margin: 80px 10%;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+                animation: slide-up 1s ease-in-out;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css?family=Joystix+Monospace&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
             <h1>How to Play</h1>
             <hr>
-        </header>
             <p>
+                Log in to your account to save scores to the leaderboards. Register if you don't have one
+                <br>
+                <br>
                 Press the Play Button
                 <br>
                 <br>
@@ -89,9 +147,9 @@
                 After answering all questions of your respected difficulty, it will show up your score. 
                 <br>
                 <br>
-                Press "Back" to go back or "Leaderboard" to view leaderboard </p>  
+                Press "Back" to go back or "Leaderboard" to view leaderboard
+            </p>
         </div>
-<center><a href="homepage" class="button" style="text-decoration: none;">Back to Menu</a></center>
-</body>
-</head>
-</html>
+        <center><a href="homepage" class="game-button green">Back to Menu</a></center>
+    </body>
+    </html>
