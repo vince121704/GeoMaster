@@ -3,7 +3,7 @@ import random
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = 'mga_pogi_sa_apc'
+app.secret_key = 'stem212'
 DATABASE = 'game_data.db'
 
 def init_db():
