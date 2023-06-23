@@ -1,15 +1,16 @@
 <html>
 <head>
-  <link rel="icon"  type="image" href="https://media.discordapp.net/attachments/883058098711969792/1118459943171919932/Untitled_design-removebg-preview.png">
-    <title>Geomaster! Discover the World one Question at a Time!</title>
+ <link rel="icon"  type="image" href="https://media.discordapp.net/attachments/883058098711969792/1118459943171919932/Untitled_design-removebg-preview.png"> 
+  <title>Geomaster! Discover the World one Question at a Time!</title>
   <style>
     body {
       text-align: center;
       background-image: url(https://cdn.discordapp.com/attachments/1108781673560150058/1116245335812087858/1.gif);
-      background-repeat: no-repeat;
-      background-size: cover;
       margin: 0;
       padding: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+
     }
 
     h1 {
@@ -143,36 +144,40 @@ input[type="radio"] {
       align-items: center;
     }
   }
+
 }
 h1{font-size: 70px;
 font-family: 'joystix monospace';
 color: green;}
+
   </style>
 </head>
 <body>
-<br>
-    <h1>Enter Geomaster!</h1>  <br>
+
+    <br>
+    <h1>Enter Geomaster!</h1>
     <br>
     <br>
     <br>
+  
       <form method="POST" action="/guest_index">
         <div class="header">
           <h2 class="header__title">Choose your difficulty!</h2>
         </div>
         <div class="diff-container">
-          <input type="radio" name="difficulty" id="option1" value="Easy">
-          <label for="option1" class="diffclass">
+          <input value="Easy" checked type="radio" name="difficulty" id="option1" >
+          <label for="option1" class="diffclass" checked>
             <span class="diffname">Easy</span>
             <span class="description">Start your journey</span>
           </label>
 
-          <input type="radio" name="difficulty" id="option2" value="Medium">
+          <input value="Medium" type="radio" name="difficulty" id="option2" >
           <label for="option2" class="diffclass">
             <span class="diffname">Medium</span>
             <span class="description">Challenge your skills</span>
           </label>
               
-          <input type="radio" name="difficulty" id="option3" value="Hard">
+          <input value="Hard" type="radio" name="difficulty" id="option3" >
           <label for="option3" class="diffclass">
             <span class="diffname">Hard</span>
             <span class="description">Push your limits</span>
